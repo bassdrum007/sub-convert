@@ -18,11 +18,11 @@ export function showPage(request: Request, env: Env): Response {
 
     const html = `  
     <!DOCTYPE html>
-        <html lang="zh-CN" theme="dark">
+        <html lang="en" theme="dark">
             <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Sub Converter · 007e</title>
+                <title>Sub Converter</title>
 
                 ${style()}
                 ${layout()}
@@ -119,9 +119,7 @@ export function showPage(request: Request, env: Env): Response {
                             </sub-form-item>
 
                             <sub-form-item label="高级选项">
-                                <div class="advanced-grid">
-                                    ${advancedConfig.map(opt => `<sub-checkbox label="${opt.label}"></sub-checkbox>`).join('')}
-                                </div>
+                                <sub-checkbox key="advanced" span="${advancedConfig.length}"></sub-checkbox>
                             </sub-form-item>
 
                             <sub-form-item label="短链地址">
