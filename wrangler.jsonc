@@ -6,5 +6,11 @@
     "compatibility_flags": ["nodejs_compat"],
     "observability": {
         "enabled": true
-    }
+    },
+    "kv_namespaces": [
+        {
+            "binding": "SUB_BUCKET",
+            "id": "b73c22247fc342318b64aa1df659b985"
+        }
+    ]
 }
