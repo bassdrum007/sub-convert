@@ -18,11 +18,11 @@ export function showPage(request: Request, env: Env): Response {
 
     const html = `  
     <!DOCTYPE html>
-        <html lang="en" theme="dark">
+        <html lang="zh-CN" theme="dark">
             <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Sub Converter</title>
+                <title>Sub Converter · 007e</title>
 
                 ${style()}
                 ${layout()}
@@ -88,6 +88,7 @@ export function showPage(request: Request, env: Env): Response {
                         </span>
 
                         <span class="header__title">订阅转换</span>
+                        <span class="header__subtitle">Sub Converter · 007e</span>
 
                         <button class="header__theme"></button>
                     </header>
@@ -119,7 +120,7 @@ export function showPage(request: Request, env: Env): Response {
                             </sub-form-item>
 
                             <sub-form-item label="高级选项">
-                                <sub-checkbox key="advanced" span="${advancedConfig.length}"></sub-checkbox>
+                                <sub-checkbox key="advanced" span="${advancedConfig.length}">REPLACED</sub-checkbox>
                             </sub-form-item>
 
                             <sub-form-item label="短链地址">

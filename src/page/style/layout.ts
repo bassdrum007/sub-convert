@@ -127,17 +127,15 @@ export function layout(): string {
                 padding: 24px 28px 32px;
             }
 
-            /* 高级选项 grid 布局，4列不溢出 */
-            .advanced-grid {
-                display: grid !important;
-                grid-template-columns: repeat(4, 1fr) !important;
-                gap: 6px 10px !important;
-                width: 100% !important;
+            /* 高级选项 flex-wrap 布局 */
+            [key="advanced"] {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                gap: 4px 10px !important;
             }
-            @media (max-width: 600px) {
-                .advanced-grid {
-                    grid-template-columns: repeat(3, 1fr) !important;
-                }
+            [key="advanced"] sub-checkbox {
+                font-size: 12px !important;
+                line-height: 1.2 !important;
             }
 
             /* 操作按钮区域居中 */

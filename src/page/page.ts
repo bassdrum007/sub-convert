@@ -88,6 +88,7 @@ export function showPage(request: Request, env: Env): Response {
                         </span>
 
                         <span class="header__title">订阅转换</span>
+                        <span class="header__subtitle">Sub Converter · 007e</span>
 
                         <button class="header__theme"></button>
                     </header>
@@ -119,9 +120,7 @@ export function showPage(request: Request, env: Env): Response {
                             </sub-form-item>
 
                             <sub-form-item label="高级选项">
-                                <div class="advanced-grid">
-                                    ${advancedConfig.map(opt => `<sub-checkbox label="${opt.label}"></sub-checkbox>`).join('')}
-                                </div>
+                                <sub-checkbox key="advanced" span="${advancedConfig.length}">REPLACED</sub-checkbox>
                             </sub-form-item>
 
                             <sub-form-item label="短链地址">
