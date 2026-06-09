@@ -127,16 +127,7 @@ export function layout(): string {
                 padding: 24px 28px 32px;
             }
 
-            /* 高级选项 flex-wrap 布局 */
-            [key="advanced"] {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                gap: 4px 10px !important;
-            }
-            [key="advanced"] sub-checkbox {
-                font-size: 12px !important;
-                line-height: 1.2 !important;
-            }
+            /* 高级选项 — flex-wrap 在 Shadow DOM 内部处理 */
 
             /* 操作按钮区域居中 */
             .sub-form-item__actions {

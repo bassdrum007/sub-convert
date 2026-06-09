@@ -43,16 +43,17 @@ export function SubCheckbox(): string {
                         border-color: var(--border-hover);
                     }
                     .sub-checkbox-group {
-                        display: grid;
-                        grid-template-columns: repeat(\${span}, 1fr);
-                        gap: 16px;
+                        display: flex; flex-wrap: wrap;
+                        /* grid replaced by flex-wrap */
+                        gap: 6px 12px;
                         width: 100%;
-                        height: 32px;
+                        /* height auto - flex-wrap handles layout */
                     }
                     .sub-checkbox {
                         display: inline-flex;
                         align-items: center;
-                        justify-content: center;
+                        justify-content: flex-start;
+                        padding: 3px 0;
                         cursor: pointer;
                         user-select: none;
                         color: var(--text-primary);

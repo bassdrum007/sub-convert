@@ -181,10 +181,10 @@ export function SubSelect(): string {
                         width: 100%;
                         max-height: 274px;
                         padding: 6px 0;
-                        background: var(--background);
+                        background: #1c1c1e;
                         border: 1px solid var(--border-color);
                         border-radius: var(--radius);
-                        box-shadow: 0 4px 12px var(--shadow);
+                        box-shadow: 0 8px 24px rgba(0,0,0,0.5);
                         box-sizing: border-box;
                         margin: 0;
                         opacity: 0;

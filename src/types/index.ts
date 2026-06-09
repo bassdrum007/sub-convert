@@ -15,3 +15,17 @@ export interface ShortUrl {
 export * from './Clash';
 export * from './Singbox';
 export * from './V2Ray';
+
+export interface UsageLog {
+    id: number;
+    url: string;
+    sub_url: string;
+    short_url: string;
+    target: string;
+    config: string;
+    protocol: string;
+    advanced: string;
+    ip: string;
+    user_agent: string;
+    created_at: string;
+}

@@ -307,6 +307,20 @@ export function showPage(request: Request, env: Env): Response {
                                 this.#formSubscribe.value = subUrl;
                                 this.#model.subUrl = subUrl;
 
+                                // 自动记录使用日志
+                                fetch('/api/log', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({
+                                        url: this.#model.url,
+                                        sub_url: subUrl,
+                                        target: this.#model.target,
+                                        config: this.#model.config,
+                                        protocol: JSON.stringify(this.#model.protocol),
+                                        advanced: JSON.stringify(this.#model.advanced)
+                                    })
+                                }).catch(() => {});
+
                                 this.#generateShortUrlBtn.removeAttribute('disabled');
                             });
 
@@ -337,6 +351,15 @@ export function showPage(request: Request, env: Env): Response {
                                     const data = await response.json();
                                     this.#formShortUrl.value = data.data.short_url;
                                     this.#model.shortUrl = data.data.short_url;
+                                    // 记录短链日志
+                                    fetch('/api/log', {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify({
+                                            url: this.#model.url,
+                                            short_url: data.data.short_url
+                                        })
+                                    }).catch(() => {});
                                     notification.success('生成短链接成功');
                                 } else {
                                     notification.error('生成短链接失败');
